@@ -5,10 +5,7 @@
     <h2>Add Member</h2>
     <form action="{{ route('members.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-            <label for="photo">Photo</label>
-            <input type="file" class="form-control" id="photo" name="photo">
-        </div>
+        
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -40,6 +37,10 @@
                 <option value="Secretary">Secretary</option>
                 <option value="Member">Member</option>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="photo">Photo</label>
+            <input type="file" class="form-control" id="photo" name="photo">
         </div>
         <button type="submit" class="btn btn-primary">Add Member</button>
     </form>
