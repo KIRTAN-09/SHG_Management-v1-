@@ -17,7 +17,7 @@
                 <th>Share Price</th>
                 <th>Member Type</th>
                 <th>Status</th>
-
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
