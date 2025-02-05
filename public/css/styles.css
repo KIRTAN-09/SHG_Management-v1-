@@ -1,0 +1,206 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "fantasy";
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: rgb(190, 190, 190);
+    position: relative;
+    background-image: url("../images/SHG.webp");
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-position: center;
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.333);
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px 5px rgb(0 0 0);
+    animation: mymove 5s ;
+    display: none;
+    transition: 0.5s;
+}
+
+@keyframes mymove {
+    from{left: -200px}
+    to{left:765px}
+}
+
+.box:hover{
+    background: rgba(255, 255, 255, 0.944);
+    box-shadow: 0px 0px 50px 10px rgb(0 0 0);
+
+}
+
+.box .button_box{
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    position: relative;
+}
+.box .button_box .signup_button,
+.box .button_box .login_button{
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.box .button_box .slider_button{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #1e3a8a;
+    z-index: -1;
+    border-radius: 5px;
+    left: 0px;
+    transition: all 0.4s cubic-bezier(0.150 , -0.100 , 0.700 , -0.500);
+}
+.box .form_box{
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+}
+.box .form_slider{
+    position: absolute;
+    width: 200%;
+    display: flex;
+    left: 0%;
+    transition: all 0.4s cubic-bezier(0.150 , -0.100 , 0.700 , -0.500);
+    
+}
+.box .form_box form{
+    width: 100%;
+    margin: 0px 10px;
+}
+.box .form_box .login_form{
+    padding-top: 30px;
+}
+.form_box form .input_field_box{
+    height: 250px;
+    overflow-y: auto; 
+}
+.form_box form .input_field_box::-webkit-scrollbar{
+    display: none;
+}
+.form_box form .input_box{
+    width: 100%;
+    margin: 30px 0px;
+    text-align: center;
+    position: relative;
+}
+.form_box form .input_box input{
+    width: 95%;
+    font-size: 25px;
+    padding: 8px 0px;
+    border-width: 0px 0px 2px 0px;
+    outline: none;
+    background: transparent;
+}
+.form_box form .input_box label{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 25px;
+    pointer-events: none;
+    color: #6d6d6d;
+    transition: 0.3s;
+}
+.form_box form .input_box input:focus,
+.form_box form .input_box input:valid{
+    border-color: blue;
+}
+.form_box form .input_box input:focus + label,
+.form_box form .input_box input:valid + label{
+    top: -16px;
+    font-size: 18px;
+    color: blue;
+}
+.form_box form .link,
+.form_box form .contact_link{
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0px;
+}
+.form_box form .link a,
+.form_box form .contact_link a{
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+.form_box form .password_link{
+    text-align: right;
+    margin: 20px 0px;
+    font-size: 20px;
+}
+.form_box form .password_link a{
+    text-decoration: none;
+    font-weight: bold;
+    color: red;
+}
+.form_box form button{
+    width: 100%;
+    padding: 10px 25px;
+    font-size: 25px;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.form_box form button:hover{
+    background: #1e3a8a;
+    color: white;
+}
+
+/* Left Section */
+.left-section {
+    width: 90%;
+    color: #ffffff88;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.left-section img {
+    width: 150px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.left-section h1 {
+    color: #1e3a8a;
+    font-size: 35px;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out;
+}
+
+.left-section h1:hover{
+    transform: scale(1.1);
+}
+.left-section img:hover {
+    transform: scale(1.1);
+}
+
+.left-section p {
+    color: #555;
+    font-size: 14px;
+}
+
