@@ -20,6 +20,7 @@ class MemberSeeder extends Seeder
             'share_quantity' => 1,
             'member_type' => 'Member',
             'member_id' => uniqid('MEM'),
+            'status' => 'Active',
         ]);
     }
 }

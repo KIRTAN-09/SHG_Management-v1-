@@ -39,6 +39,13 @@
             </select>
         </div>
         <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="photo">Photo</label>
             <input type="file" class="form-control" id="photo" name="photo">
         </div>

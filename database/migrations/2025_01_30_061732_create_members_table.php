@@ -24,6 +24,7 @@ return new class extends Migration
             $table->enum('member_type', ['President', 'Secretary', 'Member']);
             $table->string('member_id')->unique();
             $table->timestamps();
+            $table->enum('status', ['Active', 'Inactive']);
         });
     }
     

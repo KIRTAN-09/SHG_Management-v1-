@@ -366,6 +366,12 @@ return [
                 'icon' => 'fas fa-fist-raised',
                 
             ],
+            [
+                'text' => 'Meetings Management', 
+                'url' => 'meetings',
+                'icon' => 'fas fa-fw fa-users',
+                
+            ],
             
        
     ],

@@ -8,6 +8,7 @@
         <thead>
             <tr>
                 <th>Photo</th>
+                <th>Member UID</th>
                 <th>Name</th>
                 <th>Number</th>
                 <th>Village</th>
@@ -15,12 +16,15 @@
                 <th>Caste</th>
                 <th>Share Price</th>
                 <th>Member Type</th>
+                <th>Status</th>
+
             </tr>
         </thead>
         <tbody>
             @foreach ($members as $member)
                 <tr>
                     <td><img src="{{ asset('storage/' . $member->photo) }}" class="profile-img"></td>
+                    <td>{{ $member->member_id}}</td>
                     <td>{{ $member->name }}</td>
                     <td>{{ $member->number }}</td>
                     <td>{{ $member->village }}</td>
@@ -28,6 +32,7 @@
                     <td>{{ $member->caste }}</td>
                     <td>{{ $member->share_price }}</td>
                     <td>{{ $member->member_type }}</td>
+                    <td>{{ $member->status}}</td>
                 </tr>
             @endforeach
         </tbody>

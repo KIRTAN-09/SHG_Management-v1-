@@ -33,6 +33,7 @@ class MemberController extends Controller
             'caste' => 'required|string|max:255',
             'share_price' => 'required|numeric|min:1',
             'member_type' => 'required|in:President,Secretary,Member',
+            'status' => 'required|in:Active,Inactive',
         ]);
 
         if ($request->hasFile('photo')) {
@@ -42,6 +43,7 @@ class MemberController extends Controller
 
         $validated['share_quantity'] = 1;
         $validated['member_id'] = uniqid('MEM');
+        $validated['status'] = $request->input('status'); // Add status to validated data
 
         Member::create($validated);
 
