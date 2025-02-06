@@ -49,4 +49,56 @@ class MemberController extends Controller
 
         return redirect()->route('members.index')->with('success', 'Member added successfully.');
     }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'photo' => 'image|mimes:jpg,jpeg,png|max:2048',
+            'name' => 'required|string|max:255',
+            'number' => 'nullable|string|max:15',
+            'village' => 'required|string|max:255',
+            'group' => 'required|string|max:255',
+            'caste' => 'required|string|max:255',
+            'share_price' => 'required|numeric|min:1',
+            'member_type' => 'required|in:President,Secretary,Member',
+            'status' => 'required|in:Active,Inactive',
+        ]);
+
+        $member = Member::findOrFail($id);
+
+        if ($request->hasFile('photo')) {
+            $validated['photo'] = $request->file('photo')->store('images', 'public');
+            Log::info('Photo updated at: ' . $validated['photo']);
+        }
+
+        $member->update($validated);
+
+        return redirect()->route('members.show', $member->id)->with('success', 'Member updated successfully.');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $member = Member::findOrFail($id);
+        return view('members.show', compact('member'));
+    }
+
+    public function edit($id)
+    {
+        $member = Member::findOrFail($id);
+        return view('members.edit', compact('member'));
+    }
+
+    public function destroy($id)
+    {
+        $member = Member::findOrFail($id);
+        $member->delete();
+
+        return redirect()->route('members.index')->with('success', 'Member deleted successfully');
+    }
 }

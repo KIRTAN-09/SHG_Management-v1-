@@ -9,9 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\GroupController;
 
-Route::get('/members', [MemberController::class, 'index'])->name('members.index');
-Route::get('/members/create', [MemberController::class, 'create'])->name('members.create');
-Route::post('/members', [MemberController::class, 'store'])->name('members.store');
+Route::resource('members', MemberController::class);
 
 Route::get('/', function () {
     return view('auth.login');

@@ -33,6 +33,15 @@
                     <td>{{ $member->share_price }}</td>
                     <td>{{ $member->member_type }}</td>
                     <td>{{ $member->status}}</td>
+                    <td>
+                        <a href="{{ route('members.show', $member->id) }}" class="btn btn-info btn-sm">View</a>
+                        <a href="{{ route('members.edit', $member->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{{ route('members.destroy', $member->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
@@ -40,7 +49,6 @@
     <div class="d-flex justify-content-center">
         {{ $members->links('pagination::bootstrap-4') }}
     </div>
-
 
 <style>
     .profile-img {
