@@ -356,9 +356,8 @@ return [
             ],
             [
                 'text' => 'IGA Management', 
-                'url' => 'IGA',
+                'url' => 'igas',
                 'icon' => 'fas fa-globe',
-                
             ],
             [
                 'text' => 'Training Management', 
@@ -372,6 +371,7 @@ return [
                 'icon' => 'fas fa-fw fa-users',
                 
             ],
+            
             
        
     ],
