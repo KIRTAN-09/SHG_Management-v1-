@@ -8,6 +8,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\SavingsController;
+use App\Http\Controllers\IGAController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\MeetingController; // Ensure this line is present
 
 Route::resource('members', MemberController::class);
 
@@ -24,4 +28,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
     Route::resource('groups', GroupController::class);
+    Route::resource('savings', SavingsController::class);
+    Route::resource('igas', IGAController::class);
+    Route::resource('training', TrainingController::class);
+    Route::resource('meetings', MeetingController::class); // Ensure this line is present
 });

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -34,5 +35,15 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('members');
+    }
+
+    /**
+     * Update the status of a member.
+     */
+    public function updateStatus($memberId, $status)
+    {
+        DB::table('members')
+            ->where('member_id', $memberId)
+            ->update(['status' => $status]);
     }
 };
